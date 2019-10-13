@@ -1,0 +1,456 @@
+.main-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card {
+    width: 400px;
+    height: 500px;
+    background: #fcfcfc;
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
+    border-radius: 30px;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.main-card:hover {
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.08);
+}
+
+.main-card .main-card-avatar-container .main-card-avatar {
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    display: block;
+}
+
+.main-card .main-card-avatar-container {
+    height: 160px;
+}
+
+.main-card .main-card-avatar-container:after {
+    content: "";
+    box-shadow: inset 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.04);
+    display: block;
+    width: 160px;
+    height: 160px;
+    bottom: 0;
+    transform: translate(75%, -100%);
+    border-radius: 100%;
+}
+
+.main-card .main-menu-container {
+    height: 30px;
+    padding: 30px 40px 10px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-card .main-menu-container .main-menu-item {
+    list-style: none;
+    display: block;
+    padding: 0 10px;
+    font: 18px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    color: #85d1c1;
+    opacity: 0.7;
+    cursor: default;
+    transition: border-bottom 0.1s ease-out;
+}
+
+.main-card .main-menu-container .main-menu-item:not(.active) {
+    cursor: pointer;
+}
+
+.main-card .main-menu-container .main-menu-item.active {
+    border-bottom: 3px #85d1c1 solid;
+}
+
+.main-card .main-card-name {
+    font: 24px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 100;
+    color: #85d1c1;
+    opacity: 0.9;
+    padding-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.main-card .main-card-nickname {
+    font: 18px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 100;
+    opacity: 0.7;
+}
+
+.main-card .main-card-motto {
+    font: 17px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 100;
+    color: #85d1c1;
+    opacity: 0.5;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.main-card .main-card-icon-container {
+    display: flex;
+    justify-content: center;
+    transform: translateY(30px);
+}
+
+.main-card .main-card-icon-container .main-card-icon-item {
+    margin: 5px;
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    background: #85d1c1;
+    opacity: 0.75;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    transition: opacity 0.2s ease-out;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 35px;
+}
+.main-card .main-card-icon-container .main-card-icon-item:hover {
+    opacity: 1;
+}
+
+.main-card .main-card-icon-container .main-card-icon-item i {
+    transform: translateY(5.5px);
+}
+
+.pen-card {
+    margin: 150px 0px 150px 40px;
+    width: 300px;
+    height: 200px;
+    background: #fcfcfc;
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-out 0.2s, box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.pen-card:hover {
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.08);
+    transform: scale(1.02) translateY(-15px);
+}
+
+.pen-card:hover::after {
+    opacity: 1;
+}
+
+.pen-card::after {
+    content: "前往查看";
+    font: 30px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    position: absolute;
+    transition: opacity 0.2s ease-out;
+    background: rgba(133, 209, 193, 0.6);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    right: 0;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: #fcfcfc;
+}
+
+.pen-card .pen-card-image {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.pen-card .pen-card-title {
+    font: 23px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    margin: 10px 15px 0px 15px;
+    font-weight: 600;
+    color: #85d1c1;
+    opacity: 0.7;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.child-card-container[data-page="articles"],
+.child-card-container[data-page="pen"] {
+    width: 0;
+    margin: 0 0;
+    height: 500px;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    opacity: 0;
+    transition: width 0.6s ease-out, margin 0.6s ease-out, opacity 0.4s ease-out 0.4s;
+    scroll-behavior: smooth;
+}
+
+.child-card-container[data-page="articles"].active,
+.child-card-container[data-page="pen"].active {
+    width: calc(100% - 600px);
+    margin: 0 40px;
+    opacity: 1;
+}
+
+.child-card-container[data-page="articles"].active .article-card,
+.child-card-container[data-page="pen"].active .pen-card {
+    opacity: 1;
+}
+
+.child-card-container[data-page="articles"] .article-card-link,
+.child-card-container[data-page="pen"] .pen-card-link {
+    text-decoration: none;
+}
+
+.child-card-container[data-page="articles"]::-webkit-scrollbar-thumb,
+.child-card-container[data-page="pen"]::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #fcfcfc;
+}
+
+.child-card-container::-webkit-scrollbar {
+    width: 20px;
+}
+
+.child-card-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.child-card-container[data-page="donate"] {
+    width: 0;
+    margin: 0 0;
+    height: 0;
+    max-height: calc(100vh - 300px);
+    overflow: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    opacity: 0;
+    background: #fcfcfc;
+    transition: width 0.6s ease-out, margin 0.6s ease-out, opacity 0.4s ease-out 0.4s;
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
+    border-radius: 30px;
+}
+
+.child-card-container[data-page="donate"]::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #eee;
+}
+
+.child-card-container[data-page="donate"].active:hover {
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.08);
+}
+
+.child-card-container[data-page="donate"].active {
+    width: calc(100% - 700px);
+    margin: 0 35px 0 50px;
+    opacity: 1;
+    height: auto;
+    min-height: 500px;
+}
+
+.child-card-container[data-page="donate"]::-webkit-scrollbar-track {
+    background: transparent;
+    padding-bottom: 10px;
+    margin: 40px 0;
+}
+
+.article-card {
+    margin: 75px 0px 75px 40px;
+    width: 300px;
+    height: 370px;
+    background: #fcfcfc;
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-out 0.2s, box-shadow 0.2s ease-out, transform 0.2s ease-out;
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.article-card:hover {
+    box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.08);
+    transform: scale(1.02) translateY(-15px);
+}
+
+.article-card:hover::after {
+    opacity: 1;
+}
+
+.article-card::after {
+    content: "前往阅读";
+    font: 30px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    position: absolute;
+    transition: opacity 0.2s ease-out;
+    background: rgba(133, 209, 193, 0.6);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    right: 0;
+    height: 168.75px;
+    text-align: center;
+    line-height: 168.75px;
+    color: #fcfcfc;
+}
+
+.article-card-meta {
+    font: 15px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    margin: 5px 15px;
+    font-weight: 400;
+    color: #85d1c1;
+    opacity: 0.6;
+    text-align: center;
+}
+
+.article-card-meta i {
+    font-size: 14px;
+}
+
+.article-card-meta span {
+    margin-right: 8px;
+}
+
+.article-card .article-card-image {
+    width: 300px;
+    height: 168.75px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.article-card .article-card-title {
+    font: 23px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    margin: 10px 15px 0px 15px;
+    font-weight: 600;
+    color: #85d1c1;
+    opacity: 0.7;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.article-card .article-card-date {
+    font: 12px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    margin: 0 20px 5px 20px;
+    font-weight: 400;
+    color: #85d1c1;
+    opacity: 0.6;
+}
+
+.article-card .article-card-summary {
+    font: 16px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+        "WenQuanYi Micro Hei", sans-serif;
+    margin: 0 20px;
+    font-weight: 400;
+    color: #85d1c1;
+    opacity: 0.6;
+    flex: 1;
+    white-space: normal;
+}
+
+@media only screen and (max-width: 450px) {
+    .main-card {
+        width: 350px;
+    }
+
+    .main-card .main-card-avatar-container:after {
+        transform: translate(60%, -100%);
+    }
+}
+@media only screen and (min-width: 2560px) {
+    .main-container {
+        margin: 0 200px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .main-container {
+        display: block;
+        overflow-y: auto;
+    }
+
+    .main-card {
+        margin: 0 auto;
+    }
+
+    .child-card-container[data-page="articles"].active,
+    .child-card-container[data-page="pen"].active {
+        height: auto;
+        min-height: 500px;
+        overflow: auto;
+        margin: 0;
+        opacity: 1;
+    }
+
+    .child-card-container[data-page="articles"],
+    .child-card-container[data-page="pen"] {
+        width: 100% !important;
+        margin: 0 0;
+        height: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        opacity: 0;
+        transition: height 0.6s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out 0.4s;
+    }
+
+    .child-card-container[data-page="articles"].active .article-card,
+    .child-card-container[data-page="pen"].active .pen-card {
+        display: flex;
+        margin: 25px auto;
+    }
+
+    .child-card-container[data-page="donate"].active {
+        width: calc(100% - 60px);
+        margin: 30px;
+        opacity: 1;
+        min-height: none;
+    }
+
+    .placeholder-card {
+        height: 0;
+        transition: height .3s ease-out;
+    }
+
+    .placeholder-card.active {
+        height: calc(50vh - 250px);
+    }
+}
+
+.copyright {
+    user-select: none;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.6;
+    z-index: -1;
+    text-align: center;
+}
+.copyright a {
+    color: #fff;
+    text-decoration: none;
+}
