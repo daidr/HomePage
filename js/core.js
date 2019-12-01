@@ -1,5 +1,5 @@
 $(function () {
-    const themeColors = ["#2196F3", "#f44336", "#9c27b0", "#4caf50", "#3f51b5", "#ff5722", "#795548", "#607d8b", "#009688"]
+    const themeColors = ["#2196F3", "#f44336", "#9c27b0", "#4caf50", "#3f51b5", "#795548", "#607d8b", "#009688"]
     document.querySelector(':root').style.setProperty('--main-theme-color', themeColors[Math.floor((Math.random()*themeColors.length))]); // 主题色赋值
     $(".main-card .main-menu-container .main-menu-item").click(function () {
         if (!$(this).hasClass("active")) {
