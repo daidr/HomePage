@@ -58,7 +58,7 @@
     padding: 0 10px;
     font: 18px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
         "WenQuanYi Micro Hei", sans-serif;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.7;
     cursor: default;
     transition: border-bottom 0.1s ease-out;
@@ -69,14 +69,14 @@
 }
 
 .main-card .main-menu-container .main-menu-item.active {
-    border-bottom: 3px #85d1c1 solid;
+    border-bottom: 3px var(--main-theme-color) solid;
 }
 
 .main-card .main-card-name {
     font: 24px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
         "WenQuanYi Micro Hei", sans-serif;
     font-weight: 100;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.9;
     padding-top: 20px;
     margin-bottom: 0;
@@ -93,7 +93,7 @@
     font: 17px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
         "WenQuanYi Micro Hei", sans-serif;
     font-weight: 100;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.5;
     padding-top: 0px;
     text-align: center;
@@ -110,7 +110,7 @@
     height: 35px;
     width: 35px;
     border-radius: 100%;
-    background: #85d1c1;
+    background: var(--main-theme-color);
     opacity: 0.75;
     cursor: pointer;
     color: #fff;
@@ -151,7 +151,7 @@
 }
 
 .pen-card:hover::after {
-    opacity: 1;
+    opacity: .7;
 }
 
 .pen-card::after {
@@ -160,7 +160,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     position: absolute;
     transition: opacity 0.2s ease-out;
-    background: rgba(133, 209, 193, 0.6);
+    background: var(--main-theme-color);
     top: 0;
     left: 0;
     opacity: 0;
@@ -184,7 +184,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     margin: 10px 15px 0px 15px;
     font-weight: 600;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.7;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -294,7 +294,7 @@
 }
 
 .article-card:hover::after {
-    opacity: 1;
+    opacity: .7;
 }
 
 .article-card::after {
@@ -303,7 +303,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     position: absolute;
     transition: opacity 0.2s ease-out;
-    background: rgba(133, 209, 193, 0.6);
+    background: var(--main-theme-color);
     top: 0;
     left: 0;
     opacity: 0;
@@ -319,7 +319,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     margin: 5px 15px;
     font-weight: 400;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.6;
     text-align: center;
 }
@@ -345,7 +345,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     margin: 10px 15px 0px 15px;
     font-weight: 600;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.7;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -356,7 +356,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     margin: 0 20px 5px 20px;
     font-weight: 400;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.6;
 }
 
@@ -365,7 +365,7 @@
         "WenQuanYi Micro Hei", sans-serif;
     margin: 0 20px;
     font-weight: 400;
-    color: #85d1c1;
+    color: var(--main-theme-color);
     opacity: 0.6;
     flex: 1;
     white-space: normal;
@@ -430,7 +430,7 @@
 
     .placeholder-card {
         height: 0;
-        transition: height .3s ease-out;
+        transition: height 0.3s ease-out;
     }
 
     .placeholder-card.active {

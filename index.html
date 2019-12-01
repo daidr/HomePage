@@ -7,17 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>戴兜的小屋</title>
     <style>
+        :root {
+            --main-theme-color: none;
+            /* 可用配色（备忘）：#85d1c1, #2196F3, #f44336, #9c27b0, #4caf50, #3f51b5, #ff5722, #795548, #607d8b, #009688 */
+        }
+
         body,
         html {
             padding: 0;
             margin: 0;
             height: 100%;
-            background: #e3fcf7;
+
+        }
+
+        .main-background {
+            background: var(--main-theme-color);
+            opacity: 0.3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     </style>
 </head>
 
 <body>
+    <div class="main-background"></div>
     <div class="main-container">
         <div class="placeholder-card active"></div>
         <div class="main-card">
@@ -56,7 +72,7 @@
         </div>
 
         <div class="child-card-container" data-page="donate">
-            <h2 style="color: #85d1c1;font-size: 40px;font-weight: 300;text-align: center;">捐赠 - 为<ruby>蒟<rt>jǔ</rt>蒻
+            <h2 style="color: var(--main-theme-color);font-size: 2em;font-weight: 300;text-align: center;">捐赠 - 为<ruby>蒟<rt>jǔ</rt>蒻
                     <rt>ruò</rt></ruby>投食</h2>
             <iframe width="100%" height="250px" src="https://daidr.me/donate" frameborder="0"></iframe>
         </div>

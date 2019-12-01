@@ -1,4 +1,6 @@
 $(function () {
+    const themeColors = ["#2196F3", "#f44336", "#9c27b0", "#4caf50", "#3f51b5", "#ff5722", "#795548", "#607d8b", "#009688"]
+    document.querySelector(':root').style.setProperty('--main-theme-color', themeColors[Math.floor((Math.random()*themeColors.length))]); // 主题色赋值
     $(".main-card .main-menu-container .main-menu-item").click(function () {
         if (!$(this).hasClass("active")) {
             $(".main-card .main-menu-container .main-menu-item.active").removeClass("active");
@@ -94,8 +96,8 @@ $(function () {
         discordClipboard.on('success', function (e) {
             iziToast.show({
                 message: 'Discord account has been copied to the clipboard!',
-                icon: 'fas fa-check',
-                iconColor: 'rgba(163, 220, 208, 0.88)',
+                icon: 'ri-check-line',
+                iconColor: 'var(--main-theme-color)',
                 closeOnClick: true,
                 close: false,
                 progressBar: false,
