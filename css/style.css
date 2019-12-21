@@ -16,6 +16,9 @@
     box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
     border-radius: 30px;
     transition: box-shadow 0.2s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 .main-card:hover {
@@ -151,7 +154,7 @@
 }
 
 .pen-card:hover::after {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .pen-card::after {
@@ -190,6 +193,12 @@
     overflow: hidden;
 }
 
+.child-card-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
 .child-card-container[data-page="articles"],
 .child-card-container[data-page="pen"] {
     width: 0;
@@ -199,14 +208,49 @@
     overflow-x: auto;
     white-space: nowrap;
     opacity: 0;
-    transition: width 0.6s ease-out, margin 0.6s ease-out, opacity 0.4s ease-out 0.4s;
+    transition: width 0.65s ease-out, margin 0.65s ease-out, opacity 0.4s ease-out 0.4s;
     scroll-behavior: smooth;
+}
+
+.child-articles-card-container.active .child-articles-card-container-mask-l,
+.child-articles-card-container.active .child-articles-card-container-mask-r {
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    bottom: 30px;
+    z-index: 10;
+    height: calc(100% - 60px);
+    width: 10%;
+}
+
+.child-articles-card-container.active .child-articles-card-container-mask-l {
+    left: 0;
+    background: -webkit-linear-gradient(left, var(--main-theme-lightness-color) 10%, hsla(0, 0%, 97%, 0) 100%);
+    background: linear-gradient(to right, var(--main-theme-lightness-color) 10%, hsla(0, 0%, 97%, 0) 100%);
+}
+
+.child-articles-card-container.active .child-articles-card-container-mask-r {
+    right: 0;
+    background: -webkit-linear-gradient(left, hsla(0, 0%, 97%, 0) 10%, var(--main-theme-lightness-color) 100%);
+    background: linear-gradient(to right, hsla(0, 0%, 97%, 0) 10%, var(--main-theme-lightness-color) 100%);
+}
+
+.child-articles-card-container {
+    width: 0;
+    margin: 0 0;
+    height: 500px;
+    transition: width 0.65s ease-out, margin 0.65s ease-out;
+    position: relative;
+}
+
+.child-articles-card-container.active {
+    width: calc(100% - 600px);
+    margin: 0 40px;
 }
 
 .child-card-container[data-page="articles"].active,
 .child-card-container[data-page="pen"].active {
-    width: calc(100% - 600px);
-    margin: 0 40px;
+    width: 100%;
     opacity: 1;
 }
 
@@ -238,13 +282,13 @@
     width: 0;
     margin: 0 0;
     height: 0;
-    max-height: calc(100vh - 300px);
+    min-height: 0;
     overflow: hidden;
     overflow-y: auto;
     white-space: nowrap;
     opacity: 0;
     background: #fcfcfc;
-    transition: width 0.6s ease-out, margin 0.6s ease-out, opacity 0.4s ease-out 0.4s;
+    transition: width 0.65s ease-out, margin 0.65s ease-out, opacity 0.4s ease-out 0.2s, min-height 0.65s ease-out;
     box-shadow: 0 0.35rem 1rem 0 rgba(0, 124, 99, 0.05);
     border-radius: 30px;
 }
@@ -294,7 +338,7 @@
 }
 
 .article-card:hover::after {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .article-card::after {
@@ -404,6 +448,20 @@
         opacity: 1;
     }
 
+    .child-articles-card-container.active {
+        height: auto;
+        min-height: 500px;
+        overflow: auto;
+        margin: 0;
+        opacity: 1;
+        width: 100%;
+    }
+
+    .child-articles-card-container {
+        height: 0;
+        transition: height 0.6s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out 0.4s;
+    }
+
     .child-card-container[data-page="articles"],
     .child-card-container[data-page="pen"] {
         width: 100% !important;
@@ -412,13 +470,17 @@
         overflow: hidden;
         white-space: nowrap;
         opacity: 0;
-        transition: height 0.6s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out 0.4s;
     }
 
     .child-card-container[data-page="articles"].active .article-card,
     .child-card-container[data-page="pen"].active .pen-card {
         display: flex;
-        margin: 25px auto;
+        margin: 65px auto;
+    }
+
+    .child-articles-card-container-mask-l,
+    .child-articles-card-container-mask-r {
+        display: none !important;
     }
 
     .child-card-container[data-page="donate"].active {
@@ -434,7 +496,7 @@
     }
 
     .placeholder-card.active {
-        height: calc(50vh - 250px);
+        height: calc(50vh - 270px);
     }
 }
 
