@@ -208,12 +208,12 @@
     overflow-x: auto;
     white-space: nowrap;
     opacity: 0;
-    transition: width 0.65s ease-out, margin 0.65s ease-out, opacity 0.4s ease-out 0.4s;
+    transition: width 0.65s ease-out, margin 0.65s ease-out, opacity 0.4s ease-out 0.2s;
     scroll-behavior: smooth;
 }
 
-.child-articles-card-container.active .child-articles-card-container-mask-l,
-.child-articles-card-container.active .child-articles-card-container-mask-r {
+.child-articles-card-container-mask-l,
+.child-articles-card-container-mask-r {
     pointer-events: none;
     position: absolute;
     display: none;
@@ -223,13 +223,13 @@
     width: 10%;
 }
 
-.child-articles-card-container.active .child-articles-card-container-mask-l {
+.child-articles-card-container-mask-l {
     left: 0;
     background: -webkit-linear-gradient(left, var(--main-theme-lightness-color) 10%, hsla(0, 0%, 97%, 0) 100%);
     background: linear-gradient(to right, var(--main-theme-lightness-color) 10%, hsla(0, 0%, 97%, 0) 100%);
 }
 
-.child-articles-card-container.active .child-articles-card-container-mask-r {
+.child-articles-card-container-mask-r {
     right: 0;
     background: -webkit-linear-gradient(left, hsla(0, 0%, 97%, 0) 10%, var(--main-theme-lightness-color) 100%);
     background: linear-gradient(to right, hsla(0, 0%, 97%, 0) 10%, var(--main-theme-lightness-color) 100%);
@@ -459,7 +459,7 @@
 
     .child-articles-card-container {
         height: 0;
-        transition: height 0.6s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out 0.4s;
+        transition: height 0.6s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out 0.2s;
     }
 
     .child-card-container[data-page="articles"],

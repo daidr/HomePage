@@ -1,3 +1,5 @@
+let first = 1; // 首次打开文章标签
+
 // 为Date原型添加format方法，方便日期格式化
 Date.prototype.format = function (fmt) {
     var o = {
@@ -44,6 +46,10 @@ $(function () {
                     $(".child-card-container[data-page='articles']").addClass("active");
                     $(".child-articles-card-container").addClass("active");
                     $(".placeholder-card").removeClass("active");
+                    if (first) {
+                        first = 0;
+                        $(".child-articles-card-container-mask-r").fadeIn();
+                    }
                     break;
                 case "donate":
                     $(".child-card-container.active").removeClass("active");
@@ -123,7 +129,8 @@ $(function () {
                 }, 10);
             }
         }
-        articleContainer.onscroll = function (event) {
+
+        $(".child-card-container").scroll(function (event) {
             let scrollLeft = event["target"]["scrollLeft"];
             let scrollWidth = event["target"]["scrollWidth"] - event["target"]["offsetWidth"];
             if (scrollLeft == 0) {
@@ -136,7 +143,7 @@ $(function () {
                 $(".child-articles-card-container-mask-l").fadeIn();
                 $(".child-articles-card-container-mask-r").fadeOut();
             }
-        }
+        });
     }
 
     {
@@ -159,5 +166,6 @@ $(function () {
 });
 
 function delHtmlTag(str) {
-    return str.replace(/<[^>]+>/g, "");//去掉所有的html标记
+    str = str.replace(/<[^>]+>/g, "");//去掉所有的html标记
+    return str.replace(/\[\&hellip;\]/g, "...");//替换省略号
 }
