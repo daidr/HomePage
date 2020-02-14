@@ -511,8 +511,23 @@
     opacity: 0.6;
     z-index: -1;
     text-align: center;
+    font-family: "daidr-s-house-2020";
 }
 .copyright a {
     color: #fff;
     text-decoration: none;
+    transition: border 0.1s ease-out;
+    border-bottom: 0px solid #fff;
+}
+
+.copyright a:hover {
+    border-bottom: 3px solid #fff;
+}
+
+@font-face {
+    font-family: "daidr-s-house-2020";
+    src: url("../fonts/footer.svg?v20200214001") format("svg"), url("../fonts/footer.otf?v20200214001") format("otf"),
+        url("../fonts/footer.ttf?v20200214001") format("ttf"), url("../fonts/footer.woff?v20200214001") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
