@@ -25,7 +25,7 @@ Date.prototype.format = function (fmt) {
 $(function () {
     {
         const themeColors = ["#2196F3", "#f44336", "#9c27b0", "#4caf50", "#3f51b5", "#795548", "#607d8b", "#009688"]
-        const themeColorsLightness = ["#c9dff9", "#f6cbc6", "#dec2e6", "#d2e7ce", "#c7cbe7", "#d5cdc9", "#d1d8dc", "#c7dfdc"]
+        const themeColorsLightness = ["#bde0fb", "#fcc7c3", "#dec2e6", "#d2e7ce", "#c6cbe9", "#d7ccc8", "#d0d8dc", "#b3e0dc"]
         let randomColor = Math.floor((Math.random() * themeColors.length));
         document.querySelector(':root').style.setProperty('--main-theme-color', themeColors[randomColor]); // 主题色赋值
         document.querySelector(':root').style.setProperty('--main-theme-lightness-color', themeColorsLightness[randomColor]); // 主题亮色赋值
