@@ -120,7 +120,7 @@ $(function () {
                 clearTimeout(delayed);
                 delayed = setTimeout(() => {
                     clearTimeout(delayed);
-                    var step = 500;
+                    var step = 300;
                     if (event.deltaY < 0) {
                         this.scrollLeft -= step;
                     } else {

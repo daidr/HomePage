@@ -209,7 +209,7 @@
     white-space: nowrap;
     opacity: 0;
     transition: width 0.65s ease-out, margin 0.65s ease-out, opacity 0.4s ease-out 0.2s;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 .child-articles-card-container-mask-l,
